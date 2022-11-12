@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>에스더의 미래</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <header class="intro small">
+        <header>
+          <h2><a href="index.html">에스더의 미래</a></h2>
+        </header>
+      </header>
+      <section id="contents">
+        <article>
+          <div>
+            <h2><b>해산물을 좋아한다.</b></h2>
+            <p>대게, 회, 전복 등 바다에 사는 생물들 맛있어!!!</p>
+          </div>
+
+          <div>
+            <input
+              class="hidden radio-label yes-button"
+              id="q1-yes-button"
+              type="radio"
+              name="q1"
+            />
+            <label class="button-label" for="q1-yes-button">
+              <h3>맞아</h3>
+            </label>
+            <input
+              class="hidden radio-label no-button"
+              id="q1-no-button"
+              type="radio"
+              name="q1"
+            />
+            <label class="button-label" for="q1-no-button">
+              <h3>싫어</h3>
+            </label>
+            <input
+              class="hidden radio-label maybe-button"
+              id="q1-maybe-button"
+              type="radio"
+              name="q1"
+            />
+            <label class="button-label" for="q1-maybe-button">
+              <h3>아마도</h3>
+            </label>
+          </div>
+        </article>
+        <article>
+          <div>
+            <h2><b>지금 부산에 살고있다.</b></h2>
+            <p>해산물하면 부산, 붓싼 해운대에는 맛있는 해산물이 가득~</p>
+          </div>
+          <div>
+            <input
+              class="hidden radio-label yes-button"
+              id="q2-yes-button"
+              type="radio"
+              name="q2"
+            />
+            <label class="button-label" for="q2-yes-button">
+              <h3>맞아</h3>
+            </label>
+            <input
+              class="hidden radio-label no-button"
+              id="q2-no-button"
+              type="radio"
+              name="q2"
+            />
+            <label class="button-label" for="q2-no-button">
+              <h3>아닌데</h3>
+            </label>
+            <input
+              class="hidden radio-label maybe-button"
+              id="q2-maybe-button"
+              type="radio"
+              name="q2"
+            />
+            <label class="button-label" for="q2-maybe-button">
+              <h3>아마도</h3>
+            </label>
+          </div>
+        </article>
+        <article>
+          <div>
+            <h2><b>단발머리이다.</b></h2>
+            <p>머리 안묶어도 해산물 먹기 편함</p>
+          </div>
+          <div>
+            <input
+              class="hidden radio-label yes-button"
+              id="q3-yes-button"
+              type="radio"
+              name="q3"
+            />
+            <label class="button-label" for="q3-yes-button">
+              <h3>맞아</h3>
+            </label>
+            <input
+              class="hidden radio-label no-button"
+              id="q3-no-button"
+              type="radio"
+              name="q3"
+            />
+            <label class="button-label" for="q3-no-button">
+              <h3>아닌데</h3>
+            </label>
+            <input
+              class="hidden radio-label maybe-button"
+              id="q3-maybe-button"
+              type="radio"
+              name="q3"
+            />
+            <label class="button-label" for="q3-maybe-button">
+              <h3>아마도</h3>
+            </label>
+          </div>
+        </article>
+        <article>
+          <div>
+            <p>
+              과연 에스더의 미래는 어떨까 너무너무 궁금하다!! 당장 결과를
+              보러가자.
+            </p>
+          </div>
+        </article>
+      </section>
+      <footer class="bottom">
+        <ins
+          class="kakao_ad_area"
+          style="display: none"
+          data-ad-unit="DAN-66JwVa7rNLluLtJs"
+          data-ad-width="320"
+          data-ad-height="100"
+        ></ins>
+        <script
+          type="text/javascript"
+          src="//t1.daumcdn.net/kas/static/ba.min.js"
+          async
+        ></script>
+        <a onclick="result();" class="button-label blue"><h3>결과보기</h3></a>
+      </footer>
+    </div>
+  </body>
+
+  <script>
+    function result() {
+      let yes_counter = 0;
+      let elements = document.getElementsByClassName("radio-label yes-button");
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i].checked) {
+          yes_counter++;
+        }
+      }
+      elements = document.getElementsByClassName("radio-label maybe-button");
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i].checked) {
+          yes_counter++;
+        }
+      }
+      let no_counter = 0;
+      elements = document.getElementsByClassName("radio-label no-button");
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i].checked) {
+          no_counter++;
+        }
+      }
+      if (yes_counter + no_counter != 3) {
+        alert("선택안한 문제가 있습니다. 모든 문제에 답해주세요.");
+        return;
+      }
+
+      if (yes_counter == 3) location.href = "result_3.html";
+      else if (yes_counter == 2) location.href = "result_2.html";
+      else if (yes_counter == 1) location.href = "result_1.html";
+      else location.href = "result_1.html";
+    }
+  </script>
+</html>
